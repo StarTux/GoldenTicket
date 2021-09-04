@@ -66,6 +66,7 @@ public final class GoldenTicketCommand extends AbstractCommand<GoldenTicketPlugi
         plugin.save.logs.add(player.getName() + " accepted " + new Date());
         plugin.save();
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "perm player " + player.getName() + " addgroup builder");
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "titles set " + player.getName() + " Builder");
         player.sendMessage(Component.text("Welcome to the team!.", NamedTextColor.GREEN));
         ChatPlugin.getInstance().announce("b", Component.text(player.getName() + " accepted their invitation to Builder!", NamedTextColor.GOLD));
         player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, SoundCategory.MASTER, 1.0f, 2.0f);
