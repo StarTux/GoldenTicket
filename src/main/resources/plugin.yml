@@ -1,0 +1,38 @@
+main: com.cavetale.goldenticket.GoldenTicketPlugin
+
+name: GoldenTicket
+version: 0.1
+description: GoldenTicket Plugin
+api-version: 1.17
+
+author: StarTux
+website: https://github.com/StarTux/GoldenTicket
+
+depend: [Core, PlayerCache, Chat]
+softdepend: []
+
+commands:
+
+  goldenticket:
+    aliases: []
+    description: GoldenTicket Command
+    permission: goldenticket.goldenticket
+    usage: |-
+      /goldenticket
+
+  goldenticketadmin:
+    aliases: []
+    description: Admin Command
+    permission: goldenticket.admin
+    usage: |-
+      /goldenticketadmin
+
+permissions:
+
+  goldenticket.goldenticket:
+    description: Use /goldenticket
+    default: true
+
+  goldenticket.admin:
+    description: Use /goldenticketadmin
+    default: op
