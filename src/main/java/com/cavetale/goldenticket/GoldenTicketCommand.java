@@ -4,7 +4,7 @@ import com.cavetale.core.command.AbstractCommand;
 import com.winthier.chat.ChatPlugin;
 import java.util.Date;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.JoinConfiguration;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.event.HoverEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -32,7 +32,7 @@ public final class GoldenTicketCommand extends AbstractCommand<GoldenTicketPlugi
     protected boolean info(Player player, String[] args) {
         if (args.length != 0) return true;
         if (!plugin.save.members.containsKey(player.getUniqueId())) return true;
-        player.sendMessage(TextComponent.ofChildren(new Component[] {
+        player.sendMessage(Component.join(JoinConfiguration.noSeparators(), new Component[] {
                     Component.newline(),
                     Component.text("You are cordially invited to join the ", NamedTextColor.WHITE),
                     Component.text("Builder Rank", NamedTextColor.BLUE),
@@ -88,7 +88,7 @@ public final class GoldenTicketCommand extends AbstractCommand<GoldenTicketPlugi
     }
 
     protected void notify(Player player) {
-        player.sendMessage(TextComponent.ofChildren(new Component[] {
+        player.sendMessage(Component.join(JoinConfiguration.noSeparators(), new Component[] {
                     Component.newline(),
                     Component.text("You received a ", NamedTextColor.WHITE),
                     (Component.text()
