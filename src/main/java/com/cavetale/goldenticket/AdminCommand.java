@@ -16,13 +16,14 @@ public final class AdminCommand extends AbstractCommand<GoldenTicketPlugin> {
     protected void onEnable() {
         rootNode.addChild("add").arguments("<player>")
             .description("Add a player")
-            .playerCaller(this::add);
+            .completers(PlayerCache.NAME_COMPLETER)
+            .senderCaller(this::add);
         rootNode.addChild("save").denyTabCompletion()
             .description("Save to disk")
-            .playerCaller(this::save);
+            .senderCaller(this::save);
         rootNode.addChild("reload").denyTabCompletion()
             .description("Reload from disk")
-            .playerCaller(this::reload);
+            .senderCaller(this::reload);
     }
 
     protected boolean add(CommandSender sender, String[] args) {
